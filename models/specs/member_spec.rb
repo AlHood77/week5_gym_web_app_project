@@ -18,4 +18,16 @@ class MemberTest < MiniTest::Test
         assert_equal("Alan", @member.first_name())
     end
 
+    def test_member_can_have_last_name()
+        assert_equal("Hood", @member.last_name())
+    end
+
+    def test_member_can_have_dob()
+        assert_equal("27/12/1977", @member.date_of_birth())
+    end
+
+    def test_member_can_have_membership_type()
+        assert_equal("Standard", @member.membership_type())
+    end
+
 end
