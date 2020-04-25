@@ -2,14 +2,14 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-    attr_reader ( :category, :date, :time, :number_of_spaces, :registered_members, :id )
+    attr_reader ( :category, :activity_date, :time, :number_of_spaces, :registered_members, :id )
 
 
     def initialize( options )
         @id = options['id'].to_i if options['id']
         @category = options ['category']
-        @date = options ['date']
-        @time = options ['time']
+        @activity_date = options ['activity_date']
+        @activity_time = options ['activity_time']
         @number_of_spaces = options ['number_of_spaces'].to_i
         @registered_members = []
     end
