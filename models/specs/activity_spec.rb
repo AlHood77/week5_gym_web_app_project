@@ -9,9 +9,9 @@ class ActivityTest < MiniTest::Test
 
     def setup()
         @activity = Activity.new("Pilates", "01 May 2020", "1200", 3)
-        @member1 = Member.new("Brian", "King", "01 Jan 1980", "Gold")
-        @member2 = Member.new("Paul", "McCormack", "01 Feb 1978", "Standard")
-        @member3 = Member.new("Hazel", "Ruzive", "24 Feb 1980", "Silver")
+        @member1 = Member.new(1, "Brian", "King", "01 Jan 1980", "Gold")
+        @member2 = Member.new(2, "Paul", "McCormack", "01 Feb 1978", "Standard")
+        @member3 = Member.new(3, "Hazel", "Ruzive", "24 Feb 1980", "Silver")
     end
 
     def test_can_create_activity()
@@ -40,6 +40,13 @@ class ActivityTest < MiniTest::Test
 
     def test_member_can_be_registered_for_activity
         @activity.register_member_on_activity(@member1)
+        assert_equal(1, @activity.members_registered())
+    end
+
+    def test_remove_member_from_activity_by_id
+        @activity.register_member_on_activity(@member1)
+        @activity.register_member_on_activity(@member2)
+        @activity.remove_member_by_id(@member2)
         assert_equal(1, @activity.members_registered())
     end
 

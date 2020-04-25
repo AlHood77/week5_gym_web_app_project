@@ -7,11 +7,15 @@ require_relative('../member.rb')
 class MemberTest < MiniTest::Test
 
     def setup()
-        @member = Member.new("Alan", "Hood", "27/12/1977", "Standard")
+        @member = Member.new(001, "Alan", "Hood", "27/12/1977", "Standard")
     end
 
     def test_can_create_member()
         assert_equal(Member, @member.class())
+    end
+
+    def test_member_can_have_id()
+        assert_equal(001, @member.id)
     end
 
     def test_member_can_have_first_name()
