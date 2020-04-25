@@ -1,13 +1,15 @@
+require_relative( '../db/sql_runner' )
+
 class Member
 
-    attr_reader :id, :first_name, :last_name, :date_of_birth, :membership_type
+    attr_reader ( :first_name, :last_name, :date_of_birth, :membership_type, :id )
 
-    def initialize(id, first_name, last_name, date_of_birth, membership_type)
-        @id = id
-        @first_name = first_name
-        @last_name = last_name
-        @date_of_birth = date_of_birth
-        @membership_type = membership_type
+    def initialize(options)
+        @id = options['id'].to_i if options['id']
+        @first_name = options['first_name']
+        @last_name = options['last_name']
+        @date_of_birth = options['date_of_birth']
+        @membership_type = options ['membership_type']
     end
 
 

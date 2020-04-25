@@ -1,13 +1,16 @@
+require_relative( '../db/sql_runner' )
+
 class Activity
 
-    attr_reader :category, :date, :time, :number_of_spaces, :registered_members
-    attr_accessor :registered_members
+    attr_reader ( :category, :date, :time, :number_of_spaces, :registered_members, :id )
 
-    def initialize(category, date, time, number_of_spaces)
-        @category = category
-        @date = date
-        @time = time
-        @number_of_spaces = number_of_spaces
+
+    def initialize( options )
+        @id = options['id'].to_i if options['id']
+        @category = options ['category']
+        @date = options ['date']
+        @time = options ['time']
+        @number_of_spaces = options ['number_of_spaces'].to_i
         @registered_members = []
     end
 
@@ -34,14 +37,8 @@ class Activity
 
 
 
-    
-    # def fully_booked ()
-    #     if members_registered >= number_of_spaces
-    #         return "Fully Booked"
-    #     else
-    #         register_member_on_activity
-    #     end
-    # end
+
+  
 
      #Done by SQL?
     # def remove_member_by_id(member)

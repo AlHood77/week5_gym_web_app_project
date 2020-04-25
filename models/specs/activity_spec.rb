@@ -10,10 +10,11 @@ class ActivityTest < MiniTest::Test
     def setup()
         @activity = Activity.new("Pilates", "01 May 2020", "1200", 3)
         @activity2 = Activity.new("Yoga", "02 May 2020", "1300", 10)
-        @member1 = Member.new(1, "Brian", "King", "01 Jan 1980", "Gold")
-        @member2 = Member.new(2, "Paul", "McCormack", "01 Feb 1978", "Standard")
+        @member1 = Member.new(1, "Brian", "King", "20 Sep 1977", "Gold")
+        @member2 = Member.new(2, "Paul", "McCormack", "21 Oct 1978", "Standard")
         @member3 = Member.new(3, "Hazel", "Ruzive", "24 Feb 1980", "Silver")
-        @member4 = Member.new(4, "Alan", "Logan", "13 Oct 1977", "Gold")
+        @member4 = Member.new(4, "Alan", "Logan", "23 Oct 1977", "Standard")
+        @member5 = Member.new(5, "Alan", "Hood", "27 Dec 1977", "Platinum")
     end
 
     def test_can_create_activity()
