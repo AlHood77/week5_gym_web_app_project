@@ -12,19 +12,42 @@ class Activity
     end
 
     def members_registered()
-         @registered_members.length()
+         @registered_members.count()
     end
 
     def register_member_on_activity(member)
-        @registered_members.push(member)
+       if members_registered >= number_of_spaces
+            return "Fully Booked"
+        else
+            @registered_members.push(member) 
+        end
     end
 
-    def remove_member_by_id(member)
-        p @registered_members.delete_if { |member| member.id == 2 }
+    def spaces_available(activity)
+        @number_of_spaces - members_registered
     end
 
     def cancel_activity()
         @registered_members.clear()
     end
+
+
+
+
+    
+    # def fully_booked ()
+    #     if members_registered >= number_of_spaces
+    #         return "Fully Booked"
+    #     else
+    #         register_member_on_activity
+    #     end
+    # end
+
+     #Done by SQL?
+    # def remove_member_by_id(member)
+    #     p @registered_members.delete_if { |member| member.id == [:id] }
+    # end
+
+ 
 
 end
