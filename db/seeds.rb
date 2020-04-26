@@ -49,6 +49,9 @@ activity5 = Activity.new({'category' => 'Spinning', 'activity_date' => '2020/05/
 
 activity5.save()
 
+booking1 = Booking.new({'member_id' => member1.id, 'activity_id' => activity1.id})
+booking1.save()
+
 
 
 

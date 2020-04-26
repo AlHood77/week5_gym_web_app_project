@@ -31,6 +31,17 @@ class Member
         @id = results.first()['id'].to_i
     end
 
+    def activities()
+        sql = "SELECT activities.*
+        FROM activities
+        INNER JOIN bookings
+        ON bookings.activity_id = activities.id
+        WHERE member_id = $1"
+        values = [@id]
+        activities_data = SqlRunner.run(sql, values)
+        return Activity.map_items(activities_data)
+    end
+
     def update()
         sql = "UPDATE members
         SET
@@ -89,13 +100,4 @@ end
 
 
 
-    # attr_reader :id, :first_name, :last_name, :date_of_birth, :membership_type
-
-
-    # def initialize(id, first_name, last_name, date_of_birth, membership_type)
-    #     @id = id
-    #     @first_name = first_name
-    #     @last_name = last_name
-    #     @date_of_birth = date_of_birth
-    #     @membership_type = membership_type
-    # end
+   

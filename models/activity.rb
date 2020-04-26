@@ -49,6 +49,17 @@ class Activity
         SqlRunner.run(sql, values)
     end
 
+    def members()
+        sql = "SELECT members.*
+        FROM members
+        INNER JOIN bookings
+        ON bookings.member_id = members.id
+        WHERE activity_id = $1"
+        values = [@id]
+        member_data = SqlRunner.run(sql, values)
+        return Member.map_items(member_data)
+    end
+
     def delete()
         sql = "DELETE FROM activities
         WHERE id = $1"
@@ -92,7 +103,7 @@ class Activity
        if members_registered >= number_of_spaces
             return "Fully Booked"
         else
-            @registered_members.push(member) 
+            @registered_members.push(member)
         end
     end
 
