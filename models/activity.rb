@@ -14,6 +14,75 @@ class Activity
         @registered_members = []
     end
     
+    def save()
+        sql = "INSERT INTO activities
+        (
+            category,
+            activity_date,
+            activity_time,
+            number_of_spaces
+        )
+        VALUES
+        (
+            $1, $2, $3, $4
+        )
+        RETURNING id"
+        values = [@category, @activity_date, @activity_time, @number_of_spaces]
+        results = SqlRunner.run(sql, values)
+        @id = results.first()['id'].to_i
+    end
+
+    def update()
+        sql = "UPDATE activities
+        SET
+        (
+            category,
+            activity_date,
+            activity_time,
+            number_of_spaces 
+        ) =
+        (
+            $1, $2, $3, $4
+        )
+        WHERE id = $5"
+        values = [@category, @activity_date, @activity_time, @number_of_spaces, @id]
+        SqlRunner.run(sql, values)
+    end
+
+    def delete()
+        sql = "DELETE FROM activities
+        WHERE id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
+    def self.all 
+        sql = "SELECT * FROM activities"
+        activity_data = SqlRunner.run(sql)
+        activities = map_items(activity_data)
+        return activities
+    end
+
+    def self.find(id)
+        sql = "SELECT *
+        FROM activities
+        WHERE id = $1"
+        values = [id]
+        results = SqlRunner.run(sql, values)
+        activity_hash = results.first
+        activity = Activity.new(activity_hash)
+        return activity
+    end
+
+    def self.delete_all()
+        sql = "DELETE from activities"
+        SqlRunner.run(sql)
+    end
+
+    def self.map_items(activity_data)
+        return activity_data.map { |activity| Activity.new(activity)}
+    end
+
 
     def members_registered()
          @registered_members.count()

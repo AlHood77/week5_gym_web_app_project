@@ -51,7 +51,7 @@ class Member
     def delete()
         sql = "DELETE FROM members
         WHERE id = $1"
-        vales = [@id]
+        values = [@id]
         SqlRunner.run(sql, values)
     end
 
