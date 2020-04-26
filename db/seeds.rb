@@ -13,7 +13,6 @@ member2 = Member.new({'first_name' => 'Hazel', 'last_name' => 'Ruzive', 'date_of
 
 member2.save()
 
-member1.first_name = "Dave"
 
 
 

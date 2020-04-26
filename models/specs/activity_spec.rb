@@ -8,8 +8,9 @@ require_relative('../member.rb')
 class ActivityTest < MiniTest::Test
 
     def setup()
-        @activity = Activity.new("Pilates", "01 May 2020", "1200", 3)
-        @activity2 = Activity.new("Yoga", "02 May 2020", "1300", 10)
+        @activity = Activity.new(5, "Pilates", "01 May 2020", "1200", 3)
+        @activity2 = Activity.new(6, "Yoga", "02 May 2020", "1300", 10)
+
         @member1 = Member.new(1, "Brian", "King", "20 Sep 1977", "Gold")
         @member2 = Member.new(2, "Paul", "McCormack", "21 Oct 1978", "Standard")
         @member3 = Member.new(3, "Hazel", "Ruzive", "24 Feb 1980", "Silver")
@@ -26,11 +27,11 @@ class ActivityTest < MiniTest::Test
     end
 
     def test_activity_can_have_date
-        assert_equal("01 May 2020", @activity.date)
+        assert_equal("01 May 2020", @activity.activity_date)
     end
 
     def test_activity_can_have_time
-        assert_equal("1200", @activity.time)
+        assert_equal("1200", @activity.activity_time)
     end
 
     def test_activity_can_have_number_of_spaces
@@ -76,13 +77,15 @@ class ActivityTest < MiniTest::Test
 
     
 
-     #Done by SQL?
-    # def test_remove_member_from_activity_by_id
-    #     @activity.register_member_on_activity(@member1)
-    #     @activity.register_member_on_activity(@member2)
-    #     @activity.remove_member_by_id(@member2)
-    #     assert_equal(1, @activity.members_registered())
-    # end
+     
+    def test_remove_member_from_activity_by_id
+        @activity.register_member_on_activity(@member1)
+        @activity.register_member_on_activity(@member2)
+        @activity.remove_member_from_activity_by_id(@member2, 2)
+        assert_equal(1, @activity.members_registered())
+    end
+
+  
    
 
 end

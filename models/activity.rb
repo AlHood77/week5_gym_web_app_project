@@ -2,8 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-    attr_reader( :category, :activity_date, :time, :number_of_spaces, :registered_members, :id )
-
+    attr_reader( :id ) 
+    attr_accessor( :category, :activity_date, :activity_time, :number_of_spaces )
 
     def initialize( options )
         @id = options['id'].to_i if options['id']
@@ -13,6 +13,7 @@ class Activity
         @number_of_spaces = options ['number_of_spaces'].to_i
         @registered_members = []
     end
+    
 
     def members_registered()
          @registered_members.count()
@@ -34,17 +35,10 @@ class Activity
         @registered_members.clear()
     end
 
+    def remove_member_from_activity_by_id(member, id)
+        p @registered_members.delete_if { |member| member.id == id  }
+    end
 
-
-
-
-  
-
-     #Done by SQL?
-    # def remove_member_by_id(member)
-    #     p @registered_members.delete_if { |member| member.id == [:id] }
-    # end
-
- 
 
 end
+
