@@ -1,0 +1,48 @@
+<form method="post" action="/members/<%= @member.id %>">
+  <label for="first-name-field">First Name:</label>
+  <input 
+  type="text" 
+  name="first_name" 
+  id="first-name-field" 
+  value="<%= @member.first_name %>"
+  />
+
+  <label for="last-name-field">Last Name:</label>
+  <input
+  type="text"
+  name="last_name"
+  id="last-name-field"
+  value="<%= @member.last_name %>"
+  />
+
+<label for="date-of-birth">Last Name:</label>
+  <input
+  type="date"
+  name="date_of_birth"
+  id="date-of-birth"
+  value="<%= @member.date_of_birth %>"
+  />
+
+  <label for="membership-type-field">Membership Type:</label>
+  <select name="membership_type" id="membership-type-field">
+    <option
+    value="Standard"
+    <%= "selected" if @member.membership_type == "Standard" %>
+    >Standard</option>
+    <option
+    value="Bronze"
+    <%= "selected" if @member.membership_type == "Bronze" %>
+    >Bronze</option>
+    <option
+    value="Silver"
+    <%= "selected" if @member.membership_type == "Silver" %>
+    >Silver</option>
+    <option
+    value="Gold"
+    <%= "selected" if @member.membership_type == "Gold" %>
+    >Gold</option>
+  </select>
+
+
+  <input type='submit' value="Edit Member">
+</form>

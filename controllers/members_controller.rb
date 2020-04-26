@@ -23,3 +23,20 @@ post '/members' do #create
     erb ( :"members/create" )
 end
 
+get '/members/:id/edit' do #edit
+    @member = Member.find( params[:id] )
+    erb ( :"members/edit" )
+end
+
+post '/members/:id' do #update
+    Member.new( params ).update
+    redirect to '/members'
+end
+
+post '/members/:id/delete' do #delete
+    member = Member.find( params[:id] )
+    member.delete()
+    redirect to '/members'
+end
+
+
