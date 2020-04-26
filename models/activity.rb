@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-    attr_reader ( :category, :activity_date, :time, :number_of_spaces, :registered_members, :id )
+    attr_reader( :category, :activity_date, :time, :number_of_spaces, :registered_members, :id )
 
 
     def initialize( options )
