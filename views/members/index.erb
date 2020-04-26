@@ -1,1 +1,13 @@
 <h1>List Of Members</h1>
+
+<% @members.each do |member| %>
+  <p>First Name: <%= member.first_name() %></p>
+  <p>Last Name: <%= member.last_name() %></p>
+  <p>Date of Birth: <%= member.date_of_birth() %></p>
+  <p>Membership Type: <%= member.membership_type() %></p>
+  <p>Membership ID: <%= member.id() %></p>
+
+
+  <p><a href="/members/<%= member.id %>">Show Member</a></p>
+  <hr />
+<% end %>

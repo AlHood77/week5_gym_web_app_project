@@ -3,16 +3,21 @@
 <form method="post" action="/members">
   
       <label for="first-name-field">First Name:</label>
-      <input type="text" name="first_name" id="first-name-field"/>
+      <input type="text" name="first_name" id="first-name-field" required/>
     
       <label for="last-name-field">Last Name:</label>
-      <input type="text" name="last_name" id="last-name-field"/>
+      <input type="text" name="last_name" id="last-name-field" required/>
 
       <label for="date-of-birth-field">Date Of Birth:</label>
-      <input type="date" name="date_of_birth" id="date-of-birth-field"/>
+      <input type="date" name="date_of_birth" id="date-of-birth-field" required/>
 
       <label for="membership-type-field">Membership Type:</label>
-      <input type="membership_type" name="membership_type" id="membership-type-field"/>
+      <select name="membership_type" id="membership-type-field" required>
+            <option value="Standard">Standard</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+      </select>
    
 
     
