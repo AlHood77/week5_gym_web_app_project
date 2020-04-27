@@ -51,6 +51,17 @@ class Booking
         return Booking.map_items(booking_data)
     end
 
+    def self.find(id)
+        sql = "SELECT *
+        FROM bookings
+        WHERE id = $1"
+        values = [id]
+        results = SqlRunner.run(sql, values)
+        booking_hash = results.first
+        booking = Booking.new(booking_hash)
+        return booking
+    end
+
     def self.delete_all()
         sql = "DELETE FROM bookings"
         SqlRunner.run(sql)

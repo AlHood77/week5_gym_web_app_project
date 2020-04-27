@@ -1,0 +1,22 @@
+<form method="post" action="/bookings/<%= @booking.id %>">
+
+  <label for="member-id">Member ID:</label>
+  <input 
+  type="number" 
+  name="member_id" 
+  id="member-id" 
+  value="<%= @booking.member_id %>"
+  />
+
+  <label for="activity-id">Activity ID:</label>
+  <input
+  type="number"
+  name="activity_id"
+  id="activity-id"
+  value="<%= @booking.activity_id %>"
+  />
+
+
+
+  <input type='submit' value="Edit Booking">
+</form>

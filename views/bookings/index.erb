@@ -1,0 +1,10 @@
+<h1>List Of Bookings</h1>
+
+
+<% @bookings.each do |booking| %>
+  <p>Member ID: <%= booking.member_id() %></p>
+  <p>Activity ID: <%= booking.activity_id() %></p>
+ 
+ <p><a href="/bookings/<%= booking.id %>">Show Bookings</a></p>
+  <hr />
+<% end %>

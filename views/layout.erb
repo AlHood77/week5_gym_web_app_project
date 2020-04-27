@@ -6,7 +6,7 @@
   
   
 
-  <%# <link rel="stylesheet" type="text/css" href=""> %>
+  
 
 </head>
 <body>
@@ -23,13 +23,6 @@
         </ul>
       </li>
 
-      <li><a href="#">Bookings</a></li>
-        <ul>
-            <li><a href="#">Add Member to Activity</a></li>
-            <li><a href="#">Remove Member From Booking</a></li>
-        </ul>
-      </li>
-
       <li><a href="/activities">Activities</a></li>
         <ul>
             <li><a href="/activities/new">Create Activity</a></li>
@@ -37,6 +30,16 @@
             <li><a href="/">Cancel Activity</a></li>
         </ul>
       </li>
+
+      <li><a href="/bookings">Bookings</a></li>
+        <ul>
+            <li><a href="/bookings/new">Book Member to Activity</a></li>
+            <li><a href="/bookings/:id/edit">Update Booking</a></li>
+            <li><a href="#">Cancel Booking for Member</a></li>
+        </ul>
+      </li>
+
+
     </ul>
 </nav>
 
