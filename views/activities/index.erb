@@ -1,0 +1,11 @@
+<% @activities.each do |activity| %>
+  <p>Category: <%= activity.category() %></p>
+  <p>Date: <%= activity.activity_date() %></p>
+  <p>Time: <%= activity.activity_time() %></p>
+  <p>Spaces Available: <%= activity.number_of_spaces() %></p>
+ 
+  
+
+   <p><a href="/activities/<%= activity.id %>">Activities</a></p>
+  <hr />
+<% end %>
