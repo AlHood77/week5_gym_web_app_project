@@ -1,5 +1,10 @@
-<p>Member ID: <%= @booking.member_id %></p>
+<p>Member ID: <%= @member.id %></p>
+<p>First Name: <%= @member.first_name %></p>
+<p>Last Name: <%= @member.last_name %></p>
 <p>Activity ID: <%= @booking.activity_id %></p>
+<p>Category: <%= @activity.category %></p>
+<p>Date: <%= @activity.activity_date %></p>
+<p>Time: <%= @activity.activity_time %></p>
 
 <p><a href="/bookings/<%= @booking.id %>/edit">Amend Booking Details</a></p>
 

@@ -3,8 +3,15 @@
 <p>Date of Birth: <%= @member.date_of_birth %></p>
 <p>Membership Type: <%= @member.membership_type %></p>
 
-<p><a href="/members/<%= @member.id %>/edit">Amend Member Details</a></p>
 
+
+<form action="/members/<%= @member.id %>/bookings">
+    <input type="submit" value="View Activities"/>
+  </form>
+
+<form class ="show_member_form" action="/members/<%= @member.id %>/edit">
+    <input type="submit" value="Edit Member"/>
+  </form>
 
 <form method="post" action="/members/<%= @member.id %>/delete">
   <input type="submit" value="Cancel Gym Membership"/>

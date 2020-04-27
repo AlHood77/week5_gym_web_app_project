@@ -3,14 +3,27 @@
 <form method="post" action="/bookings">
   
      
-<label for="member-id">Member ID:</label>
-      <input type="number" name="member_id" id="member-id" required/>
-    
-      <label for="activity-id">Activity ID:</label>
-      <input type="number" name="activity_id" id="activity-id" required/>
-    
-      <input type="submit" value="Submit Details">
-    
 
- 
+
+<form action="/bookings" method="post">
+  <label>
+  Select a member:
+    <select name="member_id">
+      <% @members.each do |member| %>
+      <option value="<%= member.id %>"><%= member.first_name %> <%= member.last_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select an activity:
+    <select name="activity_id">
+      <% @activities.each do |activity| %>
+      <option value="<%= activity.id %>"><%= activity.category %></option>
+      <% end %>
+    </select>
+
+  </label>
+
+  <input type='submit' value="Book">
 </form>

@@ -8,6 +8,10 @@
   <p>Membership ID: <%= member.id() %></p>
 
 
-  <p><a href="/members/<%= member.id %>">Show Member</a></p>
+<form action="/members/<%= member.id%>">
+<input type="submit" value="View Member"/>
+</form>
+
+  
   <hr />
 <% end %>
