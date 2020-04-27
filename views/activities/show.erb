@@ -1,5 +1,10 @@
+<p>Category: <%= @activity.category %></p>
+<p>Date: <%= @activity.activity_date %></p>
+<p>Time: <%= @activity.activity_time %></p>
+<p>Spaces Available: <%= @activity.number_of_spaces %></p>
 
-<p>Category: <%= activity.category() %></p>
-<p>Date: <%= activity.activity_date() %></p>
-<p>Time: <%= activity.activity_time() %></p>
-<p>Spaces Available: <%= activity.spaces_available() %></p>
+<p><a href="/activities/<%= @activity.id %>/edit">Amend Activity Details</a></p>
+
+<form method="post" action="/activities/<%= @activity.id %>/delete">
+  <input type="submit" value="Cancel Activity"/>
+</form>

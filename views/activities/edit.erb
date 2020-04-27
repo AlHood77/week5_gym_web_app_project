@@ -1,0 +1,43 @@
+<form method="post" action="/activities/<%= @activity.id %>">
+  
+      <label for="gym-category">Category:</label>
+      <input 
+      type="text" 
+      name="category" 
+      id="gym-category" 
+      value="<%= @activity.category %>"
+      />
+    
+      <label for="activity-date">Date:</label>
+      <input 
+      type="date" 
+      name="activity_date" 
+      id="activity-date" 
+      value="<%= @activity.activity_date %>"
+      />
+
+      <label for="activity-time">Time:</label>
+      <input 
+      type="time" 
+      name="activity_time" 
+      id="activity-time" 
+      value="<%= @activity.activity_time %>"
+      />
+
+      <label for="number-of-spaces">Spaces Available:</label>
+      <input 
+      type="number" 
+      name="number_of_spaces" 
+      id="number-of-spaces" 
+      value="<%= @activity.number_of_spaces %>"
+      />
+
+      
+   
+
+    
+      <input type="submit" value="Submit Amendments">
+    
+
+ 
+</form>

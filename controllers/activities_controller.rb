@@ -16,3 +16,25 @@ get '/activities/:id' do #show
     @activity = Activity.find( params[:id] )
     erb ( :"activities/show" )
 end
+
+post '/activities' do #create
+    @activity = Activity.new(params)
+    @activity.save()
+    erb ( :"activities/create" )
+end
+
+get '/activities/:id/edit' do #edit
+    @activity = Activity.find( params[:id] )
+    erb ( :"activities/edit" )
+end
+
+post '/activities/:id' do #update
+    Activity.new( params ).update
+    redirect to '/activities'
+end
+
+post '/activities/:id/delete' do #delete
+    activity = Activity.find( params[:id] )
+    activity.delete()
+    redirect to '/activities'
+end
