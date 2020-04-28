@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/booking.rb' )
 require_relative('../models/member.rb')
 require_relative('../models/activity.rb')
+require ( 'pry' )
 also_reload( '../models/*')
 
 get '/bookings' do #index
@@ -26,8 +27,10 @@ get '/bookings/:id' do #show
 end
 
 post '/bookings' do #create
-    @activities = Actvity.new
-    
+    @member = Member.find( params[:member_id] )
+    @activity = Activity.find( params[:activity_id] )
+    @activity.register_member_on_activity(@member)
+    @activity.update()
     @booking = Booking.new(params)
     @booking.save()
     erb ( :"bookings/create" )

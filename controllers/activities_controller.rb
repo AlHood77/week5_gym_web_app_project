@@ -16,6 +16,7 @@ end
 
 get '/activities/:id' do #show
     @activity = Activity.find( params[:id] )
+    @members = @activity.members()
     erb ( :"activities/show" )
 end
 

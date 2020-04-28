@@ -2,6 +2,9 @@
 <p>Date: <%= @activity.activity_date %></p>
 <p>Time: <%= @activity.activity_time %></p>
 <p>Spaces Available: <%= @activity.number_of_spaces %></p>
+<% @members.each do |member| %>
+<p><%= member.first_name %></p>
+<% end %>
 
 <p><a href="/activities/<%= @activity.id %>/edit">Amend Activity Details</a></p>
 

@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Activity
 
     attr_reader( :id ) 
-    attr_accessor( :category, :activity_date, :activity_time, :number_of_spaces )
+    attr_accessor( :category, :activity_date, :activity_time, :number_of_spaces, :registered_members )
 
     def initialize( options )
         @id = options['id'].to_i if options['id']
@@ -104,11 +104,14 @@ class Activity
             return "Fully Booked"
         else
             @registered_members.push(member)
-        end
+        end 
+        update()
+        
     end
 
     def spaces_available(activity)
-        @number_of_spaces - members_registered
+        @number_of_spaces - members_registered()
+        
     end
 
     def cancel_activity()
