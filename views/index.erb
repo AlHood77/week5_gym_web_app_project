@@ -1,2 +1,22 @@
+
 <h1>Activities on this Week</h1>
 
+
+<% @activities.each do |activity| %>
+
+
+  <p>Category: <%= activity.category() %></p>
+  <p>Date: <%= activity.activity_date() %></p>
+  <p>Time: <%= activity.activity_time() %></p>
+  <p>Spaces Available: <%= activity.number_of_spaces() %></p>
+  <p>Members Registered for Activity: <%= activity.members_registered() %></p>
+ 
+
+
+   <p><a href="/activities/<%= activity.id %>">Activity Details</a></p>
+  <hr />
+
+ 
+
+
+<% end %>

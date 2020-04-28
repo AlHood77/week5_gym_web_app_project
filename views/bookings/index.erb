@@ -3,36 +3,37 @@
 
 
 
-<% @bookings.each do |booking| %>
-  <p>Member ID: <%= booking.member_id() %></p>
-  <p>Activity ID: <%= booking.activity_id() %></p>
-  
-
-
-  
- 
- <p><a href="/bookings/<%= booking.id %>">Show Bookings</a></p>
-  <hr />
-<% end %>
-
 <table class="display-table">
         <tr>
-          <th>Date</th>
+          <th>Booking ID</th>
           <th>Member</th>
           <th>Activity</th>
         </tr>
-        <% for booking in @bookings %>
-        <tr class="data">
+        <% @bookings.each do |booking| %>
+        <tr>
           <td><%= booking.id %></td>
+
+          <td><%= booking.activity.activity_date %></td>
+
+          
           <td><a href="/members/<%=booking.member().id%>"><%= booking.member().first_name %></a></td>
-          <td><a href="/activities/<%=booking.activity().id%>"><%= booking.activity().category %></a></td>
-          <td class="btn-cell"><button class="editbtn"><a href="/bookings/<%= booking.id%>/edit">Edit</a></button>
-          </form></td>
-          <td class="btn-cell"><form action="/bookings/<%= booking.id %>/delete" method="post">
+
+          <td><a href="/activities/<%=booking.activity().id%>"><%= booking.activity().category %></a></td>  
+
+            <td><p><a href="/bookings/<%= booking.id %>">Show Booking</a></p></td>
+
+          <td><form action="/bookings/<%= booking.id %>/delete" method="post">
             <input type='submit' value="Delete"></td>
+          
         </tr>
         <% end %>
      </table>
+
+  
+ 
+ 
+
+
 
 
 

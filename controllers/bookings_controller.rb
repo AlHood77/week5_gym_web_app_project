@@ -26,6 +26,8 @@ get '/bookings/:id' do #show
 end
 
 post '/bookings' do #create
+    @activities = Actvity.new
+    
     @booking = Booking.new(params)
     @booking.save()
     erb ( :"bookings/create" )
