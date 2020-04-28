@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gym Web App</title>
+<title>Gym Web App</title>
  
   
-  
 
-  
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0789728bba.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/styles/style.css">
 
 </head>
-<body>
-  
-<nav>
-    <h1><a href="/activities">Gym Logo</a></h1>
-    <ul>
-      <li><a href="/members">Members</a></li>
-        <ul>
-            <li><a href="/members/new">Create Member</a></li>
-        </ul>
-      </li>
+  <body>
+  <h1><a href="/activities">Gym Logo</a></h1>
+    
+    <nav class="main-nav">     
+          
+            <a href="/members">Members</a>
+                <ul>
+                  <li><a href="/members/new">Create Member</a></li>
+                </ul>
+            
+            <a href="/activities">Activities</a>
+                <ul>
+                  <li><a href="/activities/new">Create Activity</a></li>         
+                </ul>
+            
+            <a href="/bookings">Bookings</a>
+                <ul>
+                  <li><a href="/bookings/new">Book Member to Activity</a></li>
+                </ul>
+    </nav>
 
-      <li><a href="/activities">Activities</a></li>
-        <ul>
-            <li><a href="/activities/new">Create Activity</a></li>         
-        </ul>
-      </li>
-
-      <li><a href="/bookings">Bookings</a></li>
-        <ul>
-            <li><a href="/bookings/new">Book Member to Activity</a></li>
-        </ul>
-      </li>
+    <div class="banner">
+      <div class="banner-content">
+          <h2>Ultimate Performance</h2>
+          <p>25 Lothian Road, Edinburgh</p>
+          <p>ultimate-performance@gmail.com</p>
+          <p>0131 310 4567</p>
+      </div>
+    </div>
 
 
-    </ul>
-</nav>
 
 
   
@@ -43,5 +49,5 @@
 
 
   
-</body>
+  </body>
 </html>

@@ -2,8 +2,18 @@
 <p>Date: <%= @activity.activity_date %></p>
 <p>Time: <%= @activity.activity_time %></p>
 <p>Spaces Available: <%= @activity.number_of_spaces %></p>
+<p>Registered Members: <%= @activity.members_registered %></p>
+
+<p>List of Members Attending:<p>
 <% @members.each do |member| %>
-<p><%= member.first_name %></p>
+
+<p>MemberShip ID:<%= member.id%></p>
+<p>First Name:<%= member.first_name%></p>
+<p>Last Name:<%= member.last_name%></p>
+
+<hr />
+
+
 <% end %>
 
 <p><a href="/activities/<%= @activity.id %>/edit">Amend Activity Details</a></p>
