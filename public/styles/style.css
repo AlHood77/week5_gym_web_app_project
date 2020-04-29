@@ -149,6 +149,7 @@ input {
     margin: 8px 0;
     box-sizing: border-box;
     font-size: 100%;
+    cursor: pointer;
     
   }
 
@@ -167,6 +168,10 @@ input[type=text] {
     border: 3px solid var(--text-primary);
   }
 
+  input:hover[type="text"] {
+    background: var(--primary);
+    }
+
 /* input type date boxes */
 
   input[type=date] {
@@ -182,6 +187,10 @@ input[type=text] {
     border: 3px solid var(--text-primary);
   }
 
+  input:hover[type="date"] {
+    background: var(--primary);
+    }
+
   /* input type time boxes */
 
   input[type=time] {
@@ -196,6 +205,10 @@ input[type=text] {
   input[type=time]:focus {
     border: 3px solid var(--text-primary);
   }
+
+  input:hover[type="time"] {
+    background: var(--primary);
+    }
 
   /* input type number boxes */
 
@@ -224,6 +237,14 @@ input[type=text] {
     color: var(--text-primary);
   }
 
+  select:hover {
+    background: var(--primary);
+    }
+
+  
+
+
+
 /* submit button */
 
   input[type=submit] {
@@ -239,3 +260,8 @@ input[type=text] {
   input:hover[type="submit"] {
     background: var(--primary);
     }
+
+    label {
+        text-align: center;
+    }
+

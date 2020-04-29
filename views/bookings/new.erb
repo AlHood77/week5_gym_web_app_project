@@ -3,22 +3,23 @@
 <form method="post" action="/bookings">
   
      
+<div class="new-form">
 
-
-<form class="new-form" action="/bookings" method="post">
-  <label>
-  Select a member:
+<form  action="/bookings" method="post">
+  <label></label>
     <select>
       <% @members.each do |member| %>
+      <option value="" selected disabled hidden>Select Member Name</option>
       <option value="<%= member.id %>"><%= member.first_name %> <%= member.last_name %></option>
       <% end %>
     </select>
-  </label>
+  
 
   <label>
-    Select an activity:
-    <select>
+
+    <select >
       <% @activities.each do |activity| %>
+      <option value="" selected disabled hidden>Select Activity</option>
       <option value="<%= activity.id %>"><%= activity.category %></option>
       <% end %>
     </select>
@@ -26,4 +27,7 @@
   </label>
 
   <input type='submit' value="Book">
+
+  </div>
+
 </form>

@@ -6,8 +6,8 @@
 <p>Date: <%= @activity.activity_date %></p>
 <p>Time: <%= @activity.activity_time %></p>
 
-<p><a href="/bookings/<%= @booking.id %>/edit">Amend Booking Details</a></p>
 
-<form method="post" action="/bookings/<%= @booking.id %>/delete">
+
+<form class="new-form" method="post" action="/bookings/<%= @booking.id %>/delete">
   <input type="submit" value="Cancel Booking"/>
 </form>
