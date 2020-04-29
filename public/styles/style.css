@@ -32,14 +32,12 @@ nav ul li:hover {
     color: var(--text-primary);
 }
 
-
-
 .main-nav {
-    max-width: 1100px;
+    max-width: 100%;
     height: 90px;
     margin: 0 auto;
     background-color: var(--primary);
-
+    border-radius: 4px 4px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +51,6 @@ nav ul li:hover {
         justify-content: space-between;
     }
 }
-
 
 .main-nav ul {
     display: flex;
@@ -100,6 +97,7 @@ nav ul li:hover {
    
 /* } */
 
+/* banner image */
 .banner {
     height: 350px;
     background-image: url(../images/gym\ image.jpg);
@@ -110,6 +108,7 @@ nav ul li:hover {
     display: flex;
     background-position: top center; 
     text-align: center;
+    border-radius: 0 0 4px 4px;
 }
 
 .banner-content {
@@ -158,7 +157,7 @@ input {
 input[type=text] {
     
     border: 1px solid var(--text-primary);
-    border-radius: 4px;
+    border-radius: 50px;
     background-color: var(--secondary);
     outline: none;
     color: var(--text-primary);
@@ -177,10 +176,11 @@ input[type=text] {
   input[type=date] {
    
     border: 1px solid var(--text-primary);
-    border-radius: 4px;
+    border-radius: 50px;
     background-color: var(--secondary);
     outline: none;
     color: var(--text-primary);
+
   }
 
   input[type=date]:focus {
@@ -196,7 +196,7 @@ input[type=text] {
   input[type=time] {
     
     border: 1px solid var(--text-primary);
-    border-radius: 4px;
+    border-radius: 50px;
     background-color: var(--secondary);
     outline: none;
     color: var(--text-primary);
@@ -215,7 +215,7 @@ input[type=text] {
   input[type=number] {
     
     border: 1px solid var(--text-primary);
-    border-radius: 4px;
+    border-radius: 50px;
     background-color: var(--secondary);
     outline: none;
     color: var(--text-primary);
@@ -231,7 +231,10 @@ input[type=text] {
     width: 100%;
     padding: 12px 20px;
     border: 1px solid var(--text-primary);
-    border-radius: 4px;
+    border-radius: 50px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     background-color: var(--secondary);
     outline: none;
     color: var(--text-primary);
@@ -240,9 +243,6 @@ input[type=text] {
   select:hover {
     background: var(--primary);
     }
-
-  
-
 
 
 /* submit button */
@@ -255,13 +255,38 @@ input[type=text] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 50px;
   }
 
   input:hover[type="submit"] {
     background: var(--primary);
-    }
+  }
 
     label {
         text-align: center;
     }
 
+    .tooltip-dob {
+        position: relative;
+        /* display: inline-block; */
+      }
+      
+      .tooltip-dob .tooltiptext {
+        visibility: hidden;
+        width: 100px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+      
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+      }
+
+      .tooltip-dob:hover .tooltiptext {
+        visibility: visible;
+        top: 10px;
+        right: 105%;
+      }
