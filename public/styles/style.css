@@ -223,3 +223,19 @@ input[type=text] {
     outline: none;
     color: var(--text-primary);
   }
+
+/* submit button */
+
+  input[type=submit] {
+    background-color: var(--secondary);
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  input:hover[type="submit"] {
+    background: var(--primary);
+    }
