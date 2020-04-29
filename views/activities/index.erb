@@ -1,16 +1,20 @@
-<% @activities.each do |activity| %>
-  <p>Category: <%= activity.category() %></p>
-  <p>Date: <%= activity.activity_date() %></p>
-  <p>Time: <%= activity.activity_time() %></p>
-  <p>Spaces Available: <%= activity.number_of_spaces() %></p>
+
+<div class="activity-list">
+
   
- 
+    <% @activities.each_with_index do |activity| %>
+<div class="new-activity">
+    <p>Category: <%= activity.category() %></p>
+    <p>Date: <%= activity.activity_date() %></p>
+    <p>Time: <%= activity.activity_time() %></p>
+    <p>Spaces Available: <%= activity.number_of_spaces() %></p>
+  
+  <p><a href="/activities/<%= activity.id %>">Activity Details</a></p>
+  </div>
 
 
-   <p><a href="/activities/<%= activity.id %>">Activity Details</a></p>
-  <hr />
-
- 
-
-
+   
+  
 <% end %>
+
+</div>
