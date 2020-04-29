@@ -2,8 +2,9 @@
     --mainFont :'Open Sans', sans-serif;
 
     --white: #ffffff;
-    --primary: 
-    --secondary:
+    --primary: #333333;
+    --secondary: #484848;
+    --text-primary: #e5c454;
 }
 
 html {
@@ -11,56 +12,214 @@ html {
   }
   *, *:before, *:after {
     box-sizing: inherit;
+    padding: 0;
   }
 
 body {
     font-family: var(--mainFont);
 }
 
-nav {
-    max-width: 1200px;
+nav li {
+    list-style: none;
+}
+
+nav ul li:hover {
+    background-color: var(--secondary);
+}
+
+#logo {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+
+
+.main-nav {
+    max-width: 1100px;
+    height: 90px;
     margin: 0 auto;
-    padding: 1rem 0;
+    background-color: var(--primary);
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
 @media (min-width:768px) {
     .main-nav {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 }
 
-.main-nav a {
-    color: black;
-    text-decoration: none;
-    font-size: 1.4rem;
-    margin-bottom: 1.4rem;
+
+.main-nav ul {
+    display: flex;
+    z-index: 100;
 }
 
-@media (min-width:768px) {
-    .main-nav a {
-        margin-bottom: 0;
-    }
+/* .main-nav ul li {
+    display: flex;
+    flex-direction: column;
+} */
+
+.main-nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-right: 20px;
 }
+
+/* Dropdown */
+/* @media (min-width:768px){ */
+    .main-nav ul li {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        flex: 1 1 100%; 
+    }
+    .main-nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0; 
+    }
+    .main-nav ul li:hover ul {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #332a2a ;
+    }
+    .dropdown-content {
+        font-size: 1rem;
+    }
+
+   
+/* } */
 
 .banner {
-    height: 300px;
+    height: 350px;
     background-image: url(../images/gym\ image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
+    opacity: 0.8;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.banner-content {
-    color: #e5c454;
+    background-position: top center; 
     text-align: center;
 }
+
+.banner-content {
+    color: var(--text-primary);
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    
+}
+
+/* form */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-primary);
+    opacity: 1; /* Firefox */
+  }
+
+  /* form headings above form */
+.form-heading {
+    text-align: center;
+    color: var(--primary);
+}
+
+/* new Member/Activity and Booking form */
+.new-form {
+    
+    width: 450px;
+    margin: 0 auto;
+
+    /*input standard settings  */
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    
+  }
+
+  /* input type text boxes */
+
+input[type=text] {
+    
+    border: 1px solid var(--text-primary);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    outline: none;
+    color: var(--text-primary);
+  }
+
+  input[type=text]:focus {
+    border: 3px solid var(--text-primary);
+  }
+
+/* input type date boxes */
+
+  input[type=date] {
+   
+    border: 1px solid var(--text-primary);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    outline: none;
+    color: var(--text-primary);
+  }
+
+  input[type=date]:focus {
+    border: 3px solid var(--text-primary);
+  }
+
+  /* input type time boxes */
+
+  input[type=time] {
+    
+    border: 1px solid var(--text-primary);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    outline: none;
+    color: var(--text-primary);
+  }
+
+  input[type=time]:focus {
+    border: 3px solid var(--text-primary);
+  }
+
+  /* input type number boxes */
+
+  input[type=number] {
+    
+    border: 1px solid var(--text-primary);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    outline: none;
+    color: var(--text-primary);
+  }
+
+  input[type=number]:focus {
+    border: 3px solid var(--text-primary);
+  }
+
+  /* select input boxes */
+
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--text-primary);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    outline: none;
+    color: var(--text-primary);
+  }

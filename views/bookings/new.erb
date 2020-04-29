@@ -1,14 +1,14 @@
-<h2>Create New Booking</h2>
+<h2 class="form-heading">Create New Booking</h2>
 
 <form method="post" action="/bookings">
   
      
 
 
-<form action="/bookings" method="post">
+<form class="new-form" action="/bookings" method="post">
   <label>
   Select a member:
-    <select name="member_id">
+    <select>
       <% @members.each do |member| %>
       <option value="<%= member.id %>"><%= member.first_name %> <%= member.last_name %></option>
       <% end %>
@@ -17,7 +17,7 @@
 
   <label>
     Select an activity:
-    <select name="activity_id">
+    <select>
       <% @activities.each do |activity| %>
       <option value="<%= activity.id %>"><%= activity.category %></option>
       <% end %>

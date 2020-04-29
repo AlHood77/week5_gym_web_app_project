@@ -1,7 +1,7 @@
 
 
 
-
+<div class=activity-details>
 <% @activities.each do |activity| %>
 
 
@@ -10,7 +10,8 @@
   <p>Time: <%= activity.activity_time() %></p>
   <p>Spaces Available: <%= activity.number_of_spaces() %></p>
   <p>Members Registered for Activity: <%= activity.members_registered() %></p>
- 
+
+</div>
 
 
    <p><a href="/activities/<%= activity.id %>">Activity Details</a></p>
