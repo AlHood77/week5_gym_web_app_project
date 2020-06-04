@@ -1,4 +1,4 @@
-# gym_web_app_project
+# Gym Wep App Project using Sinatra
 
 Gym Web App Project
 
